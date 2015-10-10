@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BasesDetailViewController" customModule="Universal_FE_Randomizer" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="dWj-P3-IvO" id="Hph-Cu-IlP"/>
+                <outlet property="redistributionOptionButton" destination="Uh7-wB-2Bl" id="ZcY-Ye-lAp"/>
+                <outlet property="stepper" destination="S63-oI-8oZ" id="gJR-wd-g4x"/>
+                <outlet property="varianceOptionButton" destination="8G1-x9-TqQ" id="cqD-4r-bwz"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="8G1-x9-TqQ">
+                    <rect key="frame" x="121" y="235" width="75" height="18"/>
+                    <buttonCell key="cell" type="radio" title="Variance" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="fgQ-AT-doX">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMethodChanged:" target="-2" id="5Cw-Aw-Z9u"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="Uh7-wB-2Bl">
+                    <rect key="frame" x="263" y="235" width="108" height="18"/>
+                    <buttonCell key="cell" type="radio" title="Redistribution" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="XZv-CP-vvU">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onMethodChanged:" target="-2" id="uuK-Ls-X1N"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWj-P3-IvO">
+                    <rect key="frame" x="18" y="211" width="444" height="17"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Description Goes Here" id="ZEJ-Ek-fZQ">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box title="Parameters" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="fjk-vW-Ybn">
+                    <rect key="frame" x="17" y="16" width="446" height="187"/>
+                    <view key="contentView" id="A30-uA-oB9">
+                        <rect key="frame" x="1" y="1" width="444" height="171"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <customView placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="S63-oI-8oZ" customClass="LabeledValueStepper" customModule="Universal_FE_Randomizer" customModuleProvider="target">
+                                <rect key="frame" x="172" y="64" width="100" height="44"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="S63-oI-8oZ" firstAttribute="centerY" secondItem="A30-uA-oB9" secondAttribute="centerY" id="5Uu-qY-2GZ"/>
+                            <constraint firstItem="S63-oI-8oZ" firstAttribute="centerX" secondItem="A30-uA-oB9" secondAttribute="centerX" id="kdn-0r-uPH"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="183" id="TCf-jK-OsW"/>
+                    </constraints>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="8G1-x9-TqQ" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="trailing" multiplier="0.33" id="1Zh-Ad-6ZD"/>
+                <constraint firstAttribute="trailing" secondItem="fjk-vW-Ybn" secondAttribute="trailing" constant="20" id="3iI-48-aPV"/>
+                <constraint firstItem="fjk-vW-Ybn" firstAttribute="top" secondItem="dWj-P3-IvO" secondAttribute="bottom" constant="8" id="4tr-EW-UKI"/>
+                <constraint firstItem="8G1-x9-TqQ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="8gS-Nv-GkW"/>
+                <constraint firstItem="Uh7-wB-2Bl" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="trailing" multiplier="0.66" id="BvG-hS-3Q6"/>
+                <constraint firstItem="dWj-P3-IvO" firstAttribute="top" secondItem="Uh7-wB-2Bl" secondAttribute="bottom" constant="8" id="PiZ-Rn-JpS"/>
+                <constraint firstItem="dWj-P3-IvO" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="U6F-qo-HDl"/>
+                <constraint firstItem="fjk-vW-Ybn" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Z11-2Q-VxS"/>
+                <constraint firstAttribute="trailing" secondItem="dWj-P3-IvO" secondAttribute="trailing" constant="20" id="ZES-59-S4K"/>
+                <constraint firstItem="dWj-P3-IvO" firstAttribute="top" secondItem="8G1-x9-TqQ" secondAttribute="bottom" constant="8" id="aIz-zo-gBM"/>
+                <constraint firstItem="Uh7-wB-2Bl" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="eo8-dF-sgH"/>
+                <constraint firstAttribute="bottom" secondItem="fjk-vW-Ybn" secondAttribute="bottom" constant="20" id="mhw-WN-38A"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		814DF9F81BC8A542002A8AC4 /* GrowthsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BD48941BC789A600ED6169 /* GrowthsDetailViewController.xib */; };
+		814DF9FB1BC98E02002A8AC4 /* BasesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DF9F91BC98E02002A8AC4 /* BasesDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		814DF9FC1BC98E02002A8AC4 /* BasesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814DF9FA1BC98E02002A8AC4 /* BasesDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		814DF9FF1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DF9FD1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		814DFA001BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814DF9FE1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		814DFA031BC9C1D1002A8AC4 /* MovementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DFA011BC9C1D1002A8AC4 /* MovementDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		814DFA041BC9C1D1002A8AC4 /* MovementDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814DFA021BC9C1D1002A8AC4 /* MovementDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		81BD488A1BC38FB000ED6169 /* RandomizationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD48891BC38FB000ED6169 /* RandomizationSettings.swift */; settings = {ASSET_TAGS = (); }; };
+		81BD488C1BC39F7900ED6169 /* LabeledValueStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD488B1BC39F7900ED6169 /* LabeledValueStepper.swift */; settings = {ASSET_TAGS = (); }; };
+		81BD488E1BC77B2700ED6169 /* TitleDetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD488D1BC77B2700ED6169 /* TitleDetailCellView.swift */; settings = {ASSET_TAGS = (); }; };
+		81BD48951BC789A600ED6169 /* GrowthsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD48931BC789A600ED6169 /* GrowthsDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		81EC4F871BBE39C1007F00E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC4F861BBE39C1007F00E8 /* AppDelegate.swift */; };
+		81EC4F891BBE39C1007F00E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EC4F881BBE39C1007F00E8 /* Assets.xcassets */; };
+		81EC4F8C1BBE39C1007F00E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81EC4F8A1BBE39C1007F00E8 /* MainMenu.xib */; };
+		81EC4F991BBE3AAD007F00E8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC4F971BBE3AAD007F00E8 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		81EC4F9A1BBE3AAD007F00E8 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81EC4F981BBE3AAD007F00E8 /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		814DF9F91BC98E02002A8AC4 /* BasesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasesDetailViewController.swift; sourceTree = "<group>"; };
+		814DF9FA1BC98E02002A8AC4 /* BasesDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasesDetailViewController.xib; sourceTree = "<group>"; };
+		814DF9FD1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstitutionDetailViewController.swift; sourceTree = "<group>"; };
+		814DF9FE1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConstitutionDetailViewController.xib; sourceTree = "<group>"; };
+		814DFA011BC9C1D1002A8AC4 /* MovementDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementDetailViewController.swift; sourceTree = "<group>"; };
+		814DFA021BC9C1D1002A8AC4 /* MovementDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovementDetailViewController.xib; sourceTree = "<group>"; };
+		81BD48891BC38FB000ED6169 /* RandomizationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomizationSettings.swift; sourceTree = "<group>"; };
+		81BD488B1BC39F7900ED6169 /* LabeledValueStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledValueStepper.swift; sourceTree = "<group>"; };
+		81BD488D1BC77B2700ED6169 /* TitleDetailCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleDetailCellView.swift; sourceTree = "<group>"; };
+		81BD48931BC789A600ED6169 /* GrowthsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowthsDetailViewController.swift; sourceTree = "<group>"; };
+		81BD48941BC789A600ED6169 /* GrowthsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrowthsDetailViewController.xib; sourceTree = "<group>"; };
+		81EC4F831BBE39C1007F00E8 /* Universal FE Randomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Universal FE Randomizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81EC4F861BBE39C1007F00E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81EC4F881BBE39C1007F00E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81EC4F8B1BBE39C1007F00E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		81EC4F8D1BBE39C1007F00E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81EC4F971BBE3AAD007F00E8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		81EC4F981BBE3AAD007F00E8 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81EC4F801BBE39C1007F00E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81EC4F7A1BBE39C1007F00E8 = {
+			isa = PBXGroup;
+			children = (
+				81EC4F851BBE39C1007F00E8 /* Universal FE Randomizer */,
+				81EC4F841BBE39C1007F00E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81EC4F841BBE39C1007F00E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81EC4F831BBE39C1007F00E8 /* Universal FE Randomizer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81EC4F851BBE39C1007F00E8 /* Universal FE Randomizer */ = {
+			isa = PBXGroup;
+			children = (
+				81EC4F861BBE39C1007F00E8 /* AppDelegate.swift */,
+				81EC4F881BBE39C1007F00E8 /* Assets.xcassets */,
+				81EC4F8A1BBE39C1007F00E8 /* MainMenu.xib */,
+				81EC4F8D1BBE39C1007F00E8 /* Info.plist */,
+				81EC4F971BBE3AAD007F00E8 /* MainViewController.swift */,
+				81EC4F981BBE3AAD007F00E8 /* MainViewController.xib */,
+				81BD48891BC38FB000ED6169 /* RandomizationSettings.swift */,
+				81BD488B1BC39F7900ED6169 /* LabeledValueStepper.swift */,
+				81BD488D1BC77B2700ED6169 /* TitleDetailCellView.swift */,
+				81BD48931BC789A600ED6169 /* GrowthsDetailViewController.swift */,
+				81BD48941BC789A600ED6169 /* GrowthsDetailViewController.xib */,
+				814DF9F91BC98E02002A8AC4 /* BasesDetailViewController.swift */,
+				814DF9FA1BC98E02002A8AC4 /* BasesDetailViewController.xib */,
+				814DF9FD1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.swift */,
+				814DF9FE1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib */,
+				814DFA011BC9C1D1002A8AC4 /* MovementDetailViewController.swift */,
+				814DFA021BC9C1D1002A8AC4 /* MovementDetailViewController.xib */,
+			);
+			path = "Universal FE Randomizer";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81EC4F821BBE39C1007F00E8 /* Universal FE Randomizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81EC4F901BBE39C1007F00E8 /* Build configuration list for PBXNativeTarget "Universal FE Randomizer" */;
+			buildPhases = (
+				81EC4F7F1BBE39C1007F00E8 /* Sources */,
+				81EC4F801BBE39C1007F00E8 /* Frameworks */,
+				81EC4F811BBE39C1007F00E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Universal FE Randomizer";
+			productName = "Universal FE Randomizer";
+			productReference = 81EC4F831BBE39C1007F00E8 /* Universal FE Randomizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81EC4F7B1BBE39C1007F00E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Shen Lu";
+				TargetAttributes = {
+					81EC4F821BBE39C1007F00E8 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 81EC4F7E1BBE39C1007F00E8 /* Build configuration list for PBXProject "Universal FE Randomizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81EC4F7A1BBE39C1007F00E8;
+			productRefGroup = 81EC4F841BBE39C1007F00E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81EC4F821BBE39C1007F00E8 /* Universal FE Randomizer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81EC4F811BBE39C1007F00E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814DFA001BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib in Resources */,
+				814DFA041BC9C1D1002A8AC4 /* MovementDetailViewController.xib in Resources */,
+				814DF9F81BC8A542002A8AC4 /* GrowthsDetailViewController.xib in Resources */,
+				81EC4F891BBE39C1007F00E8 /* Assets.xcassets in Resources */,
+				81EC4F9A1BBE3AAD007F00E8 /* MainViewController.xib in Resources */,
+				814DF9FC1BC98E02002A8AC4 /* BasesDetailViewController.xib in Resources */,
+				81EC4F8C1BBE39C1007F00E8 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81EC4F7F1BBE39C1007F00E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81EC4F871BBE39C1007F00E8 /* AppDelegate.swift in Sources */,
+				81BD488A1BC38FB000ED6169 /* RandomizationSettings.swift in Sources */,
+				81EC4F991BBE3AAD007F00E8 /* MainViewController.swift in Sources */,
+				81BD488C1BC39F7900ED6169 /* LabeledValueStepper.swift in Sources */,
+				81BD48951BC789A600ED6169 /* GrowthsDetailViewController.swift in Sources */,
+				81BD488E1BC77B2700ED6169 /* TitleDetailCellView.swift in Sources */,
+				814DFA031BC9C1D1002A8AC4 /* MovementDetailViewController.swift in Sources */,
+				814DF9FF1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.swift in Sources */,
+				814DF9FB1BC98E02002A8AC4 /* BasesDetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		81EC4F8A1BBE39C1007F00E8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81EC4F8B1BBE39C1007F00E8 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81EC4F8E1BBE39C1007F00E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		81EC4F8F1BBE39C1007F00E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		81EC4F911BBE39C1007F00E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Universal FE Randomizer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.otakureborn.Universal-FE-Randomizer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		81EC4F921BBE39C1007F00E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Universal FE Randomizer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.otakureborn.Universal-FE-Randomizer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81EC4F7E1BBE39C1007F00E8 /* Build configuration list for PBXProject "Universal FE Randomizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81EC4F8E1BBE39C1007F00E8 /* Debug */,
+				81EC4F8F1BBE39C1007F00E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81EC4F901BBE39C1007F00E8 /* Build configuration list for PBXNativeTarget "Universal FE Randomizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81EC4F911BBE39C1007F00E8 /* Debug */,
+				81EC4F921BBE39C1007F00E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81EC4F7B1BBE39C1007F00E8 /* Project object */;
+}
