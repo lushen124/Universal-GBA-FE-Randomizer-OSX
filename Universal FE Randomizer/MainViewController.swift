@@ -29,6 +29,7 @@ class MainViewController: NSViewController {
     var basesDetailViewController : BasesDetailViewController?
     var constitutionDetailViewController : ConstitutionDetailViewController?
     var movementDetailViewController : MovementDetailViewController?
+    var weaponDetailViewController : WeaponDetailViewController?
     
     var growthContentView : NSView {
         get {
@@ -74,6 +75,17 @@ class MainViewController: NSViewController {
         }
     }
     
+    var weaponContentView : NSView {
+        get {
+            if (self.weaponDetailViewController == nil) {
+                self.weaponDetailViewController = WeaponDetailViewController()
+                self.weaponDetailViewController?.delegate = self
+            }
+            
+            return weaponDetailViewController!.view
+        }
+    }
+    
     var currentMode : TopLevelRandomizationOptions?
     
     override func viewDidLoad() {
@@ -116,6 +128,12 @@ class MainViewController: NSViewController {
             RandomizationSettings.sharedInstance.randomizeAffinityEnabled = isEnabled
             self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Affinity.rawValue), columnIndexes: NSIndexSet.init(index: 0))
             self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Affinity.rawValue))
+        }
+        else if (currentMode == TopLevelRandomizationOptions.Items) {
+            RandomizationSettings.sharedInstance.randomizeItemsEnabled = isEnabled
+            DetailContainer.hidden = !isEnabled
+            self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Items.rawValue), columnIndexes: NSIndexSet.init(index: 0))
+            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Items.rawValue))
         }
     }
 }
@@ -210,7 +228,14 @@ extension MainViewController: NSTableViewDataSource {
         }
         else if (row == TopLevelRandomizationOptions.Items.rawValue) {
             cellView.titleLabel.stringValue = "Randomize Items"
-            cellView.detailLabel.stringValue = "Disabled"
+            if (RandomizationSettings.sharedInstance.randomizeItemsEnabled) {
+                cellView.detailLabel.stringValue = WeaponDetailViewController.descriptionString()
+                cellView.detailLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.UnitalicFontMask, weight: 0, size: 12)
+                cellView.detailLabel.textColor = NSColor.blackColor()
+            }
+            else {
+                cellView.detailLabel.stringValue = "Disabled"
+            }
             cellView.needsLayout = true
         }
         else if (row == TopLevelRandomizationOptions.Classes.rawValue) {
@@ -294,6 +319,17 @@ extension MainViewController: NSTableViewDataSource {
                     cellView.detailLabel.stringValue = "Disabled"
                 }
             }
+            else if (row == TopLevelRandomizationOptions.Items.rawValue) {
+                cellView.titleLabel.stringValue = "Randomize Items"
+                if (RandomizationSettings.sharedInstance.randomizeItemsEnabled) {
+                    cellView.detailLabel.stringValue = WeaponDetailViewController.descriptionString()
+                    cellView.detailLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.UnitalicFontMask, weight: 0, size: 12)
+                    cellView.detailLabel.textColor = NSColor.blackColor()
+                }
+                else {
+                    cellView.detailLabel.stringValue = "Disabled"
+                }
+            }
         }
     }
 }
@@ -353,6 +389,15 @@ extension MainViewController: NSTableViewDelegate {
             
             self.DetailContainer.hidden = true
         }
+        else if (self.tableView.selectedRow == TopLevelRandomizationOptions.Items.rawValue) {
+            self.currentMode = TopLevelRandomizationOptions.Items
+            self.masterEnabledSwitch.state = RandomizationSettings.sharedInstance.randomizeItemsEnabled ? NSOnState : NSOffState
+            self.masterEnabledSwitch.enabled = true
+            
+            self.DetailContainer.hidden = !RandomizationSettings.sharedInstance.randomizeItemsEnabled
+            
+            contentView = self.weaponContentView
+        }
         
         if (contentView != nil) {
             self.DetailContainer.contentView?.addSubview(contentView!)
@@ -387,6 +432,10 @@ extension MainViewController : DetailContentViewDelegate {
         else if (view === self.movementDetailViewController) {
             self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Movement.rawValue))
             self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Movement.rawValue), columnIndexes: NSIndexSet.init(index: 0))
+        }
+        else if (view === self.weaponDetailViewController) {
+            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Items.rawValue))
+            self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Items.rawValue), columnIndexes: NSIndexSet.init(index: 0))
         }
     }
 }

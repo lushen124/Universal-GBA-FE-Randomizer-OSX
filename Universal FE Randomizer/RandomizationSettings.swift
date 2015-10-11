@@ -73,4 +73,24 @@ class RandomizationSettings : NSObject {
     ////////////////
     var randomizeAffinityEnabled: Bool = false
     
+    ////////////////
+    // Items
+    ////////////////
+    var randomizeItemsEnabled: Bool = false
+    var itemMethod: ItemMethod = ItemMethod.Variance
+    
+    // Parameters for variance method
+    var mightVariance: NSInteger = 1
+    var hitVariance: NSInteger = 1
+    var critVariance: NSInteger = 1
+    var weightVariance: NSInteger = 1
+    
+    // Parameters for full method
+    var mightRange: NSRange = NSMakeRange(0, 20)
+    var hitRange: NSRange = NSMakeRange(50, 150)
+    var critRange: NSRange = NSMakeRange(0, 100)
+    var weightRange: NSRange = NSMakeRange(1, 19)
+    
+    var addRandomWeaponEffects: Bool = false
+    var allowedEffectsFlags: NSInteger = 0xFFFFFFFF
 }

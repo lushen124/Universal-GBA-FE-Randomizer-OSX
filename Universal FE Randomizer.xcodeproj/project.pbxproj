@@ -14,6 +14,9 @@
 		814DFA001BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814DF9FE1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		814DFA031BC9C1D1002A8AC4 /* MovementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DFA011BC9C1D1002A8AC4 /* MovementDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		814DFA041BC9C1D1002A8AC4 /* MovementDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814DFA021BC9C1D1002A8AC4 /* MovementDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		81B33C481BC9DA7900E24BF7 /* WeaponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C461BC9DA7900E24BF7 /* WeaponDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		81B33C491BC9DA7900E24BF7 /* WeaponDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B33C471BC9DA7900E24BF7 /* WeaponDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		81B33C4B1BCA1E6200E24BF7 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C4A1BCA1E6200E24BF7 /* ItemManager.swift */; settings = {ASSET_TAGS = (); }; };
 		81BD488A1BC38FB000ED6169 /* RandomizationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD48891BC38FB000ED6169 /* RandomizationSettings.swift */; settings = {ASSET_TAGS = (); }; };
 		81BD488C1BC39F7900ED6169 /* LabeledValueStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD488B1BC39F7900ED6169 /* LabeledValueStepper.swift */; settings = {ASSET_TAGS = (); }; };
 		81BD488E1BC77B2700ED6169 /* TitleDetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD488D1BC77B2700ED6169 /* TitleDetailCellView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -32,6 +35,9 @@
 		814DF9FE1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConstitutionDetailViewController.xib; sourceTree = "<group>"; };
 		814DFA011BC9C1D1002A8AC4 /* MovementDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementDetailViewController.swift; sourceTree = "<group>"; };
 		814DFA021BC9C1D1002A8AC4 /* MovementDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovementDetailViewController.xib; sourceTree = "<group>"; };
+		81B33C461BC9DA7900E24BF7 /* WeaponDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponDetailViewController.swift; sourceTree = "<group>"; };
+		81B33C471BC9DA7900E24BF7 /* WeaponDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeaponDetailViewController.xib; sourceTree = "<group>"; };
+		81B33C4A1BCA1E6200E24BF7 /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
 		81BD48891BC38FB000ED6169 /* RandomizationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomizationSettings.swift; sourceTree = "<group>"; };
 		81BD488B1BC39F7900ED6169 /* LabeledValueStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledValueStepper.swift; sourceTree = "<group>"; };
 		81BD488D1BC77B2700ED6169 /* TitleDetailCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleDetailCellView.swift; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 				814DF9FE1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib */,
 				814DFA011BC9C1D1002A8AC4 /* MovementDetailViewController.swift */,
 				814DFA021BC9C1D1002A8AC4 /* MovementDetailViewController.xib */,
+				81B33C461BC9DA7900E24BF7 /* WeaponDetailViewController.swift */,
+				81B33C471BC9DA7900E24BF7 /* WeaponDetailViewController.xib */,
+				81B33C4A1BCA1E6200E24BF7 /* ItemManager.swift */,
 			);
 			path = "Universal FE Randomizer";
 			sourceTree = "<group>";
@@ -157,6 +166,7 @@
 				814DFA001BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib in Resources */,
 				814DFA041BC9C1D1002A8AC4 /* MovementDetailViewController.xib in Resources */,
 				814DF9F81BC8A542002A8AC4 /* GrowthsDetailViewController.xib in Resources */,
+				81B33C491BC9DA7900E24BF7 /* WeaponDetailViewController.xib in Resources */,
 				81EC4F891BBE39C1007F00E8 /* Assets.xcassets in Resources */,
 				81EC4F9A1BBE3AAD007F00E8 /* MainViewController.xib in Resources */,
 				814DF9FC1BC98E02002A8AC4 /* BasesDetailViewController.xib in Resources */,
@@ -173,12 +183,14 @@
 			files = (
 				81EC4F871BBE39C1007F00E8 /* AppDelegate.swift in Sources */,
 				81BD488A1BC38FB000ED6169 /* RandomizationSettings.swift in Sources */,
+				81B33C481BC9DA7900E24BF7 /* WeaponDetailViewController.swift in Sources */,
 				81EC4F991BBE3AAD007F00E8 /* MainViewController.swift in Sources */,
 				81BD488C1BC39F7900ED6169 /* LabeledValueStepper.swift in Sources */,
 				81BD48951BC789A600ED6169 /* GrowthsDetailViewController.swift in Sources */,
 				81BD488E1BC77B2700ED6169 /* TitleDetailCellView.swift in Sources */,
 				814DFA031BC9C1D1002A8AC4 /* MovementDetailViewController.swift in Sources */,
 				814DF9FF1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.swift in Sources */,
+				81B33C4B1BCA1E6200E24BF7 /* ItemManager.swift in Sources */,
 				814DF9FB1BC98E02002A8AC4 /* BasesDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

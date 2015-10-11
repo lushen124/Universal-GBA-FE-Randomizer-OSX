@@ -114,7 +114,7 @@ class MovementDetailViewController: NSViewController, DetailContentViewProtocol 
         if (RandomizationSettings.sharedInstance.movementMethod == MovementMethod.Variance) {
             return "MOV Method: Variance\n" + "\tDelta: " + String(RandomizationSettings.sharedInstance.varianceMovementVarianceAmount)
         }
-        else if (RandomizationSettings.sharedInstance.constitutionMethod == ConstitutionMethod.Full) {
+        else if (RandomizationSettings.sharedInstance.movementMethod == MovementMethod.Full) {
             return "MOV Method: Full\n" + "\tMinimum: " + String(RandomizationSettings.sharedInstance.minimumAllowedMovement) + "\n\tMaximum: " + String(RandomizationSettings.sharedInstance.maximumAllowedMovement)
         }
         else {
