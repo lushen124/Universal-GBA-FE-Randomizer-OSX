@@ -30,6 +30,7 @@ class MainViewController: NSViewController {
     var constitutionDetailViewController : ConstitutionDetailViewController?
     var movementDetailViewController : MovementDetailViewController?
     var weaponDetailViewController : WeaponDetailViewController?
+    var classesDetailViewController : ClassesDetailViewController?
     
     var growthContentView : NSView {
         get {
@@ -86,6 +87,17 @@ class MainViewController: NSViewController {
         }
     }
     
+    var classesContentView : NSView {
+        get {
+            if (self.classesDetailViewController == nil) {
+                self.classesDetailViewController = ClassesDetailViewController()
+                self.classesDetailViewController?.delegate = self
+            }
+            
+            return self.classesDetailViewController!.view
+        }
+    }
+    
     var currentMode : TopLevelRandomizationOptions?
     
     override func viewDidLoad() {
@@ -96,6 +108,8 @@ class MainViewController: NSViewController {
         masterEnabledSwitch.enabled = false
         
         DetailContainer.hidden = true
+        
+        RandomizationSettings.sharedInstance.game = FE6()
     }
     
     @IBAction func onEnabledSwitchToggled(sender: AnyObject) {
@@ -135,6 +149,12 @@ class MainViewController: NSViewController {
             self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Items.rawValue), columnIndexes: NSIndexSet.init(index: 0))
             self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Items.rawValue))
         }
+        else if (currentMode == TopLevelRandomizationOptions.Classes) {
+            RandomizationSettings.sharedInstance.randomizeClassesEnabled = isEnabled
+            DetailContainer.hidden = !isEnabled
+            self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Classes.rawValue), columnIndexes: NSIndexSet.init(index: 0))
+            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Classes.rawValue))
+        }
     }
 }
 
@@ -160,6 +180,7 @@ extension MainViewController: NSTableViewDataSource {
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cellView: TitleDetailCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! TitleDetailCellView
         
+        cellView.expectedWidth = tableView.frame.size.width
         cellView.titleLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.UnitalicFontMask, weight: 0, size: 14)
         cellView.detailLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.ItalicFontMask, weight: 0, size: 12)
         
@@ -174,7 +195,7 @@ extension MainViewController: NSTableViewDataSource {
                 cellView.detailLabel.textColor = NSColor.blackColor()
             }
             else {
-                cellView.detailLabel.stringValue = "Disabled"
+                cellView.detailLabel.stringValue = "\tDisabled"
             }
             cellView.needsLayout = true
         }
@@ -186,7 +207,7 @@ extension MainViewController: NSTableViewDataSource {
                 cellView.detailLabel.textColor = NSColor.blackColor()
             }
             else {
-                cellView.detailLabel.stringValue = "Disabled"
+                cellView.detailLabel.stringValue = "\tDisabled"
             }
             cellView.needsLayout = true
         }
@@ -198,7 +219,7 @@ extension MainViewController: NSTableViewDataSource {
                 cellView.detailLabel.textColor = NSColor.blackColor()
             }
             else {
-                cellView.detailLabel.stringValue = "Disabled"
+                cellView.detailLabel.stringValue = "\tDisabled"
             }
             cellView.needsLayout = true
         }
@@ -210,19 +231,19 @@ extension MainViewController: NSTableViewDataSource {
                 cellView.detailLabel.textColor = NSColor.blackColor()
             }
             else {
-                cellView.detailLabel.stringValue = "Disabled"
+                cellView.detailLabel.stringValue = "\tDisabled"
             }
             cellView.needsLayout = true
         }
         else if (row == TopLevelRandomizationOptions.Affinity.rawValue) {
             cellView.titleLabel.stringValue = "Randomize Affinity"
             if (RandomizationSettings.sharedInstance.randomizeAffinityEnabled) {
-                cellView.detailLabel.stringValue = "Enabled"
+                cellView.detailLabel.stringValue = "\tEnabled"
                 cellView.detailLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.UnitalicFontMask, weight: 0, size: 12)
                 cellView.detailLabel.textColor = NSColor.blackColor()
             }
             else {
-                cellView.detailLabel.stringValue = "Disabled"
+                cellView.detailLabel.stringValue = "\tDisabled"
             }
             cellView.needsLayout = true
         }
@@ -234,23 +255,30 @@ extension MainViewController: NSTableViewDataSource {
                 cellView.detailLabel.textColor = NSColor.blackColor()
             }
             else {
-                cellView.detailLabel.stringValue = "Disabled"
+                cellView.detailLabel.stringValue = "\tDisabled"
             }
             cellView.needsLayout = true
         }
         else if (row == TopLevelRandomizationOptions.Classes.rawValue) {
             cellView.titleLabel.stringValue = "Randomize Classes"
-            cellView.detailLabel.stringValue = "Disabled"
+            if (RandomizationSettings.sharedInstance.randomizeClassesEnabled) {
+                cellView.detailLabel.stringValue = ClassesDetailViewController.descriptionString()
+                cellView.detailLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.UnitalicFontMask, weight: 0, size: 12)
+                cellView.detailLabel.textColor = NSColor.blackColor()
+            }
+            else {
+                cellView.detailLabel.stringValue = "\tDisabled"
+            }
             cellView.needsLayout = true
         }
         else if (row == TopLevelRandomizationOptions.Buff.rawValue) {
             cellView.titleLabel.stringValue = "Buff Enemies"
-            cellView.detailLabel.stringValue = "Disabled"
+            cellView.detailLabel.stringValue = "\tDisabled"
             cellView.needsLayout = true
         }
         else if (row == TopLevelRandomizationOptions.Recruitment.rawValue) {
             cellView.titleLabel.stringValue = "Recruitment Type"
-            cellView.detailLabel.stringValue = "Normal"
+            cellView.detailLabel.stringValue = "\tNormal"
             cellView.needsLayout = true
             cellView.detailLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.UnitalicFontMask, weight: 0, size: 12)
             cellView.detailLabel.textColor = NSColor.blackColor()
@@ -261,6 +289,7 @@ extension MainViewController: NSTableViewDataSource {
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return TitleDetailCellView.heightForRowWithConfiguredCell { (cellView) -> Void in
+            cellView.expectedWidth = tableView.frame.size.width
             cellView.titleLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.UnitalicFontMask, weight: 0, size: 14)
             cellView.detailLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.ItalicFontMask, weight: 0, size: 12)
             
@@ -272,7 +301,7 @@ extension MainViewController: NSTableViewDataSource {
                     cellView.detailLabel.textColor = NSColor.blackColor()
                 }
                 else {
-                    cellView.detailLabel.stringValue = "Disabled"
+                    cellView.detailLabel.stringValue = "\tDisabled"
                 }
             }
             else if (row == TopLevelRandomizationOptions.Bases.rawValue) {
@@ -283,7 +312,7 @@ extension MainViewController: NSTableViewDataSource {
                     cellView.detailLabel.textColor = NSColor.blackColor()
                 }
                 else {
-                    cellView.detailLabel.stringValue = "Disabled"
+                    cellView.detailLabel.stringValue = "\tDisabled"
                 }
             }
             else if (row == TopLevelRandomizationOptions.Constitution.rawValue) {
@@ -294,7 +323,7 @@ extension MainViewController: NSTableViewDataSource {
                     cellView.detailLabel.textColor = NSColor.blackColor()
                 }
                 else {
-                    cellView.detailLabel.stringValue = "Disabled"
+                    cellView.detailLabel.stringValue = "\tDisabled"
                 }
             }
             else if (row == TopLevelRandomizationOptions.Movement.rawValue) {
@@ -305,18 +334,18 @@ extension MainViewController: NSTableViewDataSource {
                     cellView.detailLabel.textColor = NSColor.blackColor()
                 }
                 else {
-                    cellView.detailLabel.stringValue = "Disabled"
+                    cellView.detailLabel.stringValue = "\tDisabled"
                 }
             }
             else if (row == TopLevelRandomizationOptions.Affinity.rawValue) {
                 cellView.titleLabel.stringValue = "Randomize Affinity"
                 if (RandomizationSettings.sharedInstance.randomizeAffinityEnabled) {
-                    cellView.detailLabel.stringValue = "Enabled"
+                    cellView.detailLabel.stringValue = "\tEnabled"
                     cellView.detailLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.UnitalicFontMask, weight: 0, size: 12)
                     cellView.detailLabel.textColor = NSColor.blackColor()
                 }
                 else {
-                    cellView.detailLabel.stringValue = "Disabled"
+                    cellView.detailLabel.stringValue = "\tDisabled"
                 }
             }
             else if (row == TopLevelRandomizationOptions.Items.rawValue) {
@@ -327,7 +356,18 @@ extension MainViewController: NSTableViewDataSource {
                     cellView.detailLabel.textColor = NSColor.blackColor()
                 }
                 else {
-                    cellView.detailLabel.stringValue = "Disabled"
+                    cellView.detailLabel.stringValue = "\tDisabled"
+                }
+            }
+            else if (row == TopLevelRandomizationOptions.Classes.rawValue) {
+                cellView.titleLabel.stringValue = "Randomize Classes"
+                if (RandomizationSettings.sharedInstance.randomizeClassesEnabled) {
+                    cellView.detailLabel.stringValue = ClassesDetailViewController.descriptionString()
+                    cellView.detailLabel.font = NSFontManager.sharedFontManager().fontWithFamily("Helvetica", traits: NSFontTraitMask.UnitalicFontMask, weight: 0, size: 12)
+                    cellView.detailLabel.textColor = NSColor.blackColor()
+                }
+                else {
+                    cellView.detailLabel.stringValue = "\tDisabled"
                 }
             }
         }
@@ -398,6 +438,15 @@ extension MainViewController: NSTableViewDelegate {
             
             contentView = self.weaponContentView
         }
+        else if (self.tableView.selectedRow == TopLevelRandomizationOptions.Classes.rawValue) {
+            self.currentMode = TopLevelRandomizationOptions.Classes
+            self.masterEnabledSwitch.state = RandomizationSettings.sharedInstance.randomizeClassesEnabled ? NSOnState : NSOffState
+            self.masterEnabledSwitch.enabled = true
+            
+            self.DetailContainer.hidden = !RandomizationSettings.sharedInstance.randomizeClassesEnabled
+            
+            contentView = self.classesContentView
+        }
         
         if (contentView != nil) {
             self.DetailContainer.contentView?.addSubview(contentView!)
@@ -418,24 +467,28 @@ extension MainViewController: NSTableViewDelegate {
 extension MainViewController : DetailContentViewDelegate {
     func detailContentViewDelegateDidChangeContent(view: DetailContentViewProtocol) {
         if (view === self.growthsDetailViewController) {
-            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Growths.rawValue))
             self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Growths.rawValue), columnIndexes: NSIndexSet.init(index: 0))
+            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Growths.rawValue))
         }
         else if (view === self.basesDetailViewController) {
-            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Bases.rawValue))
             self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Bases.rawValue), columnIndexes: NSIndexSet.init(index: 0))
+            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Bases.rawValue))
         }
         else if (view === self.constitutionDetailViewController) {
-            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Constitution.rawValue))
             self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Constitution.rawValue), columnIndexes: NSIndexSet.init(index: 0))
+            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Constitution.rawValue))
         }
         else if (view === self.movementDetailViewController) {
-            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Movement.rawValue))
             self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Movement.rawValue), columnIndexes: NSIndexSet.init(index: 0))
+            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Movement.rawValue))
         }
         else if (view === self.weaponDetailViewController) {
-            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Items.rawValue))
             self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Items.rawValue), columnIndexes: NSIndexSet.init(index: 0))
+            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Items.rawValue))
+        }
+        else if (view === self.classesDetailViewController) {
+            self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Classes.rawValue), columnIndexes: NSIndexSet.init(index: 0))
+            self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Classes.rawValue))
         }
     }
 }

@@ -17,6 +17,13 @@
 		81B33C481BC9DA7900E24BF7 /* WeaponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C461BC9DA7900E24BF7 /* WeaponDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		81B33C491BC9DA7900E24BF7 /* WeaponDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B33C471BC9DA7900E24BF7 /* WeaponDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		81B33C4B1BCA1E6200E24BF7 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C4A1BCA1E6200E24BF7 /* ItemManager.swift */; settings = {ASSET_TAGS = (); }; };
+		81B33C521BCABE0400E24BF7 /* ClassesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C501BCABE0400E24BF7 /* ClassesDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		81B33C531BCABE0400E24BF7 /* ClassesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B33C511BCABE0400E24BF7 /* ClassesDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		81B33C551BCAD13800E24BF7 /* BaseGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C541BCAD13800E24BF7 /* BaseGame.swift */; settings = {ASSET_TAGS = (); }; };
+		81B33C591BCAD1F000E24BF7 /* FEObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C581BCAD1F000E24BF7 /* FEObject.swift */; settings = {ASSET_TAGS = (); }; };
+		81B33C5B1BCAE6DD00E24BF7 /* FECharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C5A1BCAE6DD00E24BF7 /* FECharacterData.swift */; settings = {ASSET_TAGS = (); }; };
+		81B33C5D1BCAEAFE00E24BF7 /* FEClassCharacterAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C5C1BCAEAFE00E24BF7 /* FEClassCharacterAbility.swift */; settings = {ASSET_TAGS = (); }; };
+		81B33C5F1BCAEE4E00E24BF7 /* FE6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C5E1BCAEE4E00E24BF7 /* FE6.swift */; settings = {ASSET_TAGS = (); }; };
 		81BD488A1BC38FB000ED6169 /* RandomizationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD48891BC38FB000ED6169 /* RandomizationSettings.swift */; settings = {ASSET_TAGS = (); }; };
 		81BD488C1BC39F7900ED6169 /* LabeledValueStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD488B1BC39F7900ED6169 /* LabeledValueStepper.swift */; settings = {ASSET_TAGS = (); }; };
 		81BD488E1BC77B2700ED6169 /* TitleDetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD488D1BC77B2700ED6169 /* TitleDetailCellView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -38,6 +45,14 @@
 		81B33C461BC9DA7900E24BF7 /* WeaponDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponDetailViewController.swift; sourceTree = "<group>"; };
 		81B33C471BC9DA7900E24BF7 /* WeaponDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeaponDetailViewController.xib; sourceTree = "<group>"; };
 		81B33C4A1BCA1E6200E24BF7 /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		81B33C4C1BCA307000E24BF7 /* Universal FE Randomizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Universal FE Randomizer-Bridging-Header.h"; sourceTree = "<group>"; };
+		81B33C501BCABE0400E24BF7 /* ClassesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesDetailViewController.swift; sourceTree = "<group>"; };
+		81B33C511BCABE0400E24BF7 /* ClassesDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassesDetailViewController.xib; sourceTree = "<group>"; };
+		81B33C541BCAD13800E24BF7 /* BaseGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGame.swift; sourceTree = "<group>"; };
+		81B33C581BCAD1F000E24BF7 /* FEObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FEObject.swift; sourceTree = "<group>"; };
+		81B33C5A1BCAE6DD00E24BF7 /* FECharacterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FECharacterData.swift; sourceTree = "<group>"; };
+		81B33C5C1BCAEAFE00E24BF7 /* FEClassCharacterAbility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FEClassCharacterAbility.swift; sourceTree = "<group>"; };
+		81B33C5E1BCAEE4E00E24BF7 /* FE6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FE6.swift; sourceTree = "<group>"; };
 		81BD48891BC38FB000ED6169 /* RandomizationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomizationSettings.swift; sourceTree = "<group>"; };
 		81BD488B1BC39F7900ED6169 /* LabeledValueStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledValueStepper.swift; sourceTree = "<group>"; };
 		81BD488D1BC77B2700ED6169 /* TitleDetailCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleDetailCellView.swift; sourceTree = "<group>"; };
@@ -102,6 +117,14 @@
 				81B33C461BC9DA7900E24BF7 /* WeaponDetailViewController.swift */,
 				81B33C471BC9DA7900E24BF7 /* WeaponDetailViewController.xib */,
 				81B33C4A1BCA1E6200E24BF7 /* ItemManager.swift */,
+				81B33C4C1BCA307000E24BF7 /* Universal FE Randomizer-Bridging-Header.h */,
+				81B33C501BCABE0400E24BF7 /* ClassesDetailViewController.swift */,
+				81B33C511BCABE0400E24BF7 /* ClassesDetailViewController.xib */,
+				81B33C541BCAD13800E24BF7 /* BaseGame.swift */,
+				81B33C581BCAD1F000E24BF7 /* FEObject.swift */,
+				81B33C5A1BCAE6DD00E24BF7 /* FECharacterData.swift */,
+				81B33C5C1BCAEAFE00E24BF7 /* FEClassCharacterAbility.swift */,
+				81B33C5E1BCAEE4E00E24BF7 /* FE6.swift */,
 			);
 			path = "Universal FE Randomizer";
 			sourceTree = "<group>";
@@ -132,6 +155,7 @@
 		81EC4F7B1BBE39C1007F00E8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Shen Lu";
 				TargetAttributes = {
@@ -167,6 +191,7 @@
 				814DFA041BC9C1D1002A8AC4 /* MovementDetailViewController.xib in Resources */,
 				814DF9F81BC8A542002A8AC4 /* GrowthsDetailViewController.xib in Resources */,
 				81B33C491BC9DA7900E24BF7 /* WeaponDetailViewController.xib in Resources */,
+				81B33C531BCABE0400E24BF7 /* ClassesDetailViewController.xib in Resources */,
 				81EC4F891BBE39C1007F00E8 /* Assets.xcassets in Resources */,
 				81EC4F9A1BBE3AAD007F00E8 /* MainViewController.xib in Resources */,
 				814DF9FC1BC98E02002A8AC4 /* BasesDetailViewController.xib in Resources */,
@@ -181,10 +206,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B33C591BCAD1F000E24BF7 /* FEObject.swift in Sources */,
+				81B33C5B1BCAE6DD00E24BF7 /* FECharacterData.swift in Sources */,
+				81B33C5F1BCAEE4E00E24BF7 /* FE6.swift in Sources */,
 				81EC4F871BBE39C1007F00E8 /* AppDelegate.swift in Sources */,
 				81BD488A1BC38FB000ED6169 /* RandomizationSettings.swift in Sources */,
+				81B33C5D1BCAEAFE00E24BF7 /* FEClassCharacterAbility.swift in Sources */,
 				81B33C481BC9DA7900E24BF7 /* WeaponDetailViewController.swift in Sources */,
+				81B33C551BCAD13800E24BF7 /* BaseGame.swift in Sources */,
 				81EC4F991BBE3AAD007F00E8 /* MainViewController.swift in Sources */,
+				81B33C521BCABE0400E24BF7 /* ClassesDetailViewController.swift in Sources */,
 				81BD488C1BC39F7900ED6169 /* LabeledValueStepper.swift in Sources */,
 				81BD48951BC789A600ED6169 /* GrowthsDetailViewController.swift in Sources */,
 				81BD488E1BC77B2700ED6169 /* TitleDetailCellView.swift in Sources */,
@@ -293,11 +324,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Universal FE Randomizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otakureborn.Universal-FE-Randomizer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Universal FE Randomizer/Universal FE Randomizer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -305,11 +339,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Universal FE Randomizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otakureborn.Universal-FE-Randomizer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Universal FE Randomizer/Universal FE Randomizer-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -90,10 +90,10 @@ class BasesDetailViewController: NSViewController, DetailContentViewProtocol {
     
     static func descriptionString() -> String {
         if (RandomizationSettings.sharedInstance.baseMethod == BaseMethod.Variance) {
-            return "Bases Method: Variance\n" + "\tDelta: " + String(RandomizationSettings.sharedInstance.varianceBasesVarianceAmount)
+            return "\tBases Method: Variance\n" + "\t\tDelta: " + String(RandomizationSettings.sharedInstance.varianceBasesVarianceAmount)
         }
         else if (RandomizationSettings.sharedInstance.baseMethod == BaseMethod.Redistribution) {
-            return "Bases Method: Redistribution\n" + "\tVariance: " + String(RandomizationSettings.sharedInstance.redistributionBasesVarianceAmount)
+            return "\tBases Method: Redistribution\n" + "\t\tVariance: " + String(RandomizationSettings.sharedInstance.redistributionBasesVarianceAmount)
         }
         else {
             return "Unknown Bases Method."

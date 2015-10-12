@@ -13,15 +13,22 @@ let kTitleDetailCellViewMargin : CGFloat = 5
 class TitleDetailCellView : NSTableCellView {
     override var intrinsicContentSize : NSSize {
         get {
-            titleLabel.preferredMaxLayoutWidth = self.frame.size.width - 2 * kTitleDetailCellViewMargin
-            detailLabel.preferredMaxLayoutWidth = self.frame.size.width - 2 * kTitleDetailCellViewMargin
-            
-            return NSMakeSize(self.frame.size.width, kTitleDetailCellViewMargin * 3 + titleLabel.intrinsicContentSize.height + detailLabel.intrinsicContentSize.height)
+            return NSMakeSize(expectedWidth, kTitleDetailCellViewMargin * 3 + titleLabel.intrinsicContentSize.height + detailLabel.intrinsicContentSize.height)
         }
     }
     
     var titleLabel : NSTextField
     var detailLabel : NSTextField
+    
+    var expectedWidth : CGFloat = 0 {
+        didSet {
+            titleLabel.preferredMaxLayoutWidth = expectedWidth - 2 * kTitleDetailCellViewMargin
+            detailLabel.preferredMaxLayoutWidth = expectedWidth - 2 * kTitleDetailCellViewMargin
+            
+            invalidateIntrinsicContentSize()
+            self.needsLayout = true
+        }
+    }
     
     init() {
         titleLabel = NSTextField.init()
@@ -49,6 +56,9 @@ class TitleDetailCellView : NSTableCellView {
         titleLabel.bordered = false
         detailLabel.bordered = false
         
+        titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        detailLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -64,6 +74,9 @@ class TitleDetailCellView : NSTableCellView {
         NSLayoutConstraint.init(item: detailLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: -1 * kTitleDetailCellViewMargin).active = true
         NSLayoutConstraint.init(item: detailLabel, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: -1 * kTitleDetailCellViewMargin).active = true
 
+        titleLabel.setContentHuggingPriority(NSLayoutPriorityDefaultHigh + 1, forOrientation: NSLayoutConstraintOrientation.Vertical)
+        titleLabel.setContentCompressionResistancePriority(NSLayoutPriorityRequired, forOrientation: NSLayoutConstraintOrientation.Vertical)
+        detailLabel.setContentCompressionResistancePriority(NSLayoutPriorityRequired, forOrientation: NSLayoutConstraintOrientation.Vertical)
     }
     
     static var measuringCell : TitleDetailCellView = TitleDetailCellView.init()
@@ -71,6 +84,7 @@ class TitleDetailCellView : NSTableCellView {
     static func heightForRowWithConfiguredCell(configureBlock: TitleDetailCellView -> Void) -> CGFloat {
         configureBlock(measuringCell)
         
+        measuringCell.invalidateIntrinsicContentSize()
         measuringCell.needsLayout = true
         measuringCell.layoutSubtreeIfNeeded()
         

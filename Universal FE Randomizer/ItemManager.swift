@@ -8,6 +8,16 @@
 
 import Cocoa
 
+protocol WeaponRank {
+    var NoRank : UInt8 { get }
+    var E : UInt8 { get }
+    var D : UInt8 { get }
+    var C : UInt8 { get }
+    var B : UInt8 { get }
+    var A : UInt8 { get }
+    var S : UInt8 { get }
+}
+
 enum WeaponEffects : Int {
     case Poison
     case Eclipse

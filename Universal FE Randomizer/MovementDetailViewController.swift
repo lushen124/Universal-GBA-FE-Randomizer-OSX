@@ -112,10 +112,10 @@ class MovementDetailViewController: NSViewController, DetailContentViewProtocol 
     
     static func descriptionString() -> String {
         if (RandomizationSettings.sharedInstance.movementMethod == MovementMethod.Variance) {
-            return "MOV Method: Variance\n" + "\tDelta: " + String(RandomizationSettings.sharedInstance.varianceMovementVarianceAmount)
+            return "\tMOV Method: Variance\n" + "\t\tDelta: " + String(RandomizationSettings.sharedInstance.varianceMovementVarianceAmount)
         }
         else if (RandomizationSettings.sharedInstance.movementMethod == MovementMethod.Full) {
-            return "MOV Method: Full\n" + "\tMinimum: " + String(RandomizationSettings.sharedInstance.minimumAllowedMovement) + "\n\tMaximum: " + String(RandomizationSettings.sharedInstance.maximumAllowedMovement)
+            return "\tMOV Method: Full\n" + "\t\tMinimum: " + String(RandomizationSettings.sharedInstance.minimumAllowedMovement) + "\n\t\tMaximum: " + String(RandomizationSettings.sharedInstance.maximumAllowedMovement)
         }
         else {
             return "Unknown MOV Method."
@@ -139,7 +139,7 @@ extension MovementDetailViewController : LabeledValueStepperDelegate {
         }
         else if (stepper == self.rightStepper) {
             if (RandomizationSettings.sharedInstance.movementMethod == MovementMethod.Full) {
-                RandomizationSettings.sharedInstance.maximumAllowedConstitution = newValue
+                RandomizationSettings.sharedInstance.maximumAllowedMovement = newValue
                 self.leftStepper.maxValue = newValue
             }
         }

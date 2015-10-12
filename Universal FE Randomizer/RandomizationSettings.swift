@@ -12,6 +12,28 @@ class RandomizationSettings : NSObject {
     
     static let sharedInstance: RandomizationSettings = RandomizationSettings.init()
     
+    var game : BaseGame? = nil {
+        didSet {
+            if (game != nil) {
+                let convertedGame : BaseGame = game!
+                
+                playableCharactersToRandomize = []
+                playableCharactersToRandomize.appendContentsOf(convertedGame.playableCharacterList())
+                
+                bossCharactersToRandomize = []
+                bossCharactersToRandomize.appendContentsOf(convertedGame.bossCharacterList())
+                
+                allowedClasses = []
+                allowedClasses.appendContentsOf(convertedGame.eligibleClasses())
+            }
+            else {
+                playableCharactersToRandomize = []
+                bossCharactersToRandomize = []
+                allowedClasses = []
+            }
+        }
+    }
+    
     ////////////////
     // Growths
     ////////////////
@@ -93,4 +115,99 @@ class RandomizationSettings : NSObject {
     
     var addRandomWeaponEffects: Bool = false
     var allowedEffectsFlags: NSInteger = 0xFFFFFFFF
+    
+    ////////////////
+    // Classes
+    ////////////////
+    var randomizeClassesEnabled: Bool = false
+    var classMethod: ClassMethod = ClassMethod.Simple
+    
+    // Parameters for simple method
+    var simpleClassIncludeLords: Bool = false
+    var simpleClassIncludeThieves: Bool = false
+    var simpleClassIncludeBosses: Bool = false
+    var simpleClassAllowUniqueClasses: Bool = false
+    var simpleClassIncludeRegularEnemies: Bool = false
+    var simpleClassAllowCrossgender: Bool = false
+    
+    // Parameters for advanced method
+    var playableCharactersToRandomize: [FECharacter] = []
+    var bossCharactersToRandomize: [FECharacter] = []
+    var allowedClasses: [FEClass] = []
+    var advancedRandomizeRegularEnemies: Bool = false
+    
+    // Helper Methods (Advanced Method only)
+    func shouldCharacterBeRandomized(character: FECharacter) -> Bool {
+        
+        if (playableCharactersToRandomize.contains({ return $0.characterID == character.characterID })) {
+            return true
+        }
+        if (bossCharactersToRandomize.contains({ return $0.characterID == character.characterID })) {
+            return true
+        }
+        
+        return false
+    }
+    
+    func shouldClassBeUsedForRandomization(characterClass: FEClass) -> Bool {
+        if (allowedClasses.contains({ return $0.classID == characterClass.classID })) {
+            return true
+        }
+        
+        return false
+    }
+    
+    func setRandomizationForPlayableCharacter(character: FECharacter, enabled: Bool) {
+        if (game != nil) {
+            if (game!.playableCharacterList().contains( { return $0.characterID == character.characterID} )) {
+                let index : Int? = playableCharactersToRandomize.indexOf( { return $0.characterID == character.characterID} )
+                if (enabled) {
+                    if (index == nil) {
+                        playableCharactersToRandomize.append(character)
+                    }
+                }
+                else {
+                    if (index != nil) {
+                        playableCharactersToRandomize.removeAtIndex(index!)
+                    }
+                }
+            }
+        }
+    }
+    
+    func setRandomizationForBossCharacter(character: FECharacter, enabled: Bool) {
+        if (game != nil) {
+            if (game!.bossCharacterList().contains( {return $0.characterID == character.characterID} )) {
+                let index : Int? = bossCharactersToRandomize.indexOf( { return $0.characterID == character.characterID} )
+                if (enabled) {
+                    if (index == nil) {
+                        bossCharactersToRandomize.append(character)
+                    }
+                }
+                else {
+                    if (index != nil) {
+                        bossCharactersToRandomize.removeAtIndex(index!)
+                    }
+                }
+            }
+        }
+    }
+    
+    func setClassForRandomization(characterClass: FEClass, enabled: Bool) {
+        if (game != nil) {
+            if (game!.eligibleClasses().contains( {return $0.classID == characterClass.classID} )) {
+                let index : Int? = allowedClasses.indexOf( { $0.classID == characterClass.classID} )
+                if (enabled) {
+                    if (index == nil) {
+                        allowedClasses.append(characterClass)
+                    }
+                }
+                else {
+                    if (index != nil) {
+                        allowedClasses.removeAtIndex(index!)
+                    }
+                }
+            }
+        }
+    }
 }

@@ -141,13 +141,13 @@ class GrowthsDetailViewController: NSViewController, DetailContentViewProtocol {
     
     static func descriptionString() -> String {
         if (RandomizationSettings.sharedInstance.growthsMethod == GrowthMethod.Variance) {
-            return "Growth Method: Variance\n" + "\tDelta: " + String(RandomizationSettings.sharedInstance.varianceGrowthsVarianceAmount)
+            return "\tGrowth Method: Variance\n" + "\t\tDelta: " + String(RandomizationSettings.sharedInstance.varianceGrowthsVarianceAmount)
         }
         else if (RandomizationSettings.sharedInstance.growthsMethod == GrowthMethod.Redistribution) {
-            return "Growth Method: Redistribution\n" + "\tVariance: " + String(RandomizationSettings.sharedInstance.redistributionGrowthsVarianceAmount) + (RandomizationSettings.sharedInstance.forceMinimumGrowths ? "\n\t5% Minimum Growths" : "")
+            return "\tGrowth Method: Redistribution\n" + "\t\tVariance: " + String(RandomizationSettings.sharedInstance.redistributionGrowthsVarianceAmount) + (RandomizationSettings.sharedInstance.forceMinimumGrowths ? "\n\t5% Minimum Growths" : "")
         }
         else if (RandomizationSettings.sharedInstance.growthsMethod == GrowthMethod.Full) {
-            return "Growth Method: Full\n" + "\tMinimum: " + String(RandomizationSettings.sharedInstance.minimumAllowedGrowth) + "\n\tMaximum: " + String(RandomizationSettings.sharedInstance.maximumAllowedGrowth)
+            return "\tGrowth Method: Full\n" + "\t\tMinimum: " + String(RandomizationSettings.sharedInstance.minimumAllowedGrowth) + "\n\t\tMaximum: " + String(RandomizationSettings.sharedInstance.maximumAllowedGrowth)
         }
         else {
             return "Unknown Growth Method."

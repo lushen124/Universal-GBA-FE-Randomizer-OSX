@@ -112,10 +112,10 @@ class ConstitutionDetailViewController: NSViewController, DetailContentViewProto
     
     static func descriptionString() -> String {
         if (RandomizationSettings.sharedInstance.constitutionMethod == ConstitutionMethod.Variance) {
-            return "CON Method: Variance\n" + "\tDelta: " + String(RandomizationSettings.sharedInstance.varianceConstitutionVarianceAmount)
+            return "\tCON Method: Variance\n" + "\t\tDelta: " + String(RandomizationSettings.sharedInstance.varianceConstitutionVarianceAmount)
         }
         else if (RandomizationSettings.sharedInstance.constitutionMethod == ConstitutionMethod.Full) {
-            return "CON Method: Full\n" + "\tMinimum: " + String(RandomizationSettings.sharedInstance.minimumAllowedConstitution) + "\n\tMaximum: " + String(RandomizationSettings.sharedInstance.maximumAllowedConstitution)
+            return "\tCON Method: Full\n" + "\t\tMinimum: " + String(RandomizationSettings.sharedInstance.minimumAllowedConstitution) + "\n\t\tMaximum: " + String(RandomizationSettings.sharedInstance.maximumAllowedConstitution)
         }
         else {
             return "Unknown CON Method."
