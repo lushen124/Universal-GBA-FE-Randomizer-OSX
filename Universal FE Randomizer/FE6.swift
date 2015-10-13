@@ -6,7 +6,7 @@
 //  Copyright © 2015 Shen Lu. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
 class FE6: NSObject {
 
@@ -123,6 +123,7 @@ extension FE6 : BaseGame {
     
     func eligibleClasses() -> [FEClass] {
         return [ GenericFEClass(displayName: "Lord", classID: 0x01),
+            GenericFEClass(displayName: "Master Lord", classID: 0x43),
             GenericFEClass(displayName: "Mercenary", classID: 0x02),
             GenericFEClass(displayName: "Hero", classID: 0x04),
             GenericFEClass(displayName: "Hero (F)", classID: 0x05),
@@ -175,10 +176,8 @@ extension FE6 : BaseGame {
             GenericFEClass(displayName: "Bard", classID: 0x36),
             GenericFEClass(displayName: "Dancer", classID: 0x37),
             GenericFEClass(displayName: "Manakete", classID: 0x38),
-            GenericFEClass(displayName: "Manakete (F)", classID: 0x39),
+            GenericFEClass(displayName: "Manakete (F)", classID: 0x39)
 //            GenericFEClass(displayName: "King", classID: 0x3D),
-//            GenericFEClass(displayName: "Master Lord", classID: 0x43)
-            
         ]
     }
     
@@ -319,5 +318,10 @@ extension FE6 : BaseGame {
         return [ GenericFEClass(displayName: "Thief", classID: 0x34),
             GenericFEClass(displayName: "Thief (F)", classID: 0x35)
         ]
+    }
+    
+    func characterLinksForCharacter(character: FECharacter) -> [FECharacter] {
+        // There are no links.
+        return []
     }
 }

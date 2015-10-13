@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811D8F431BCC24EB0065BD89 /* FE7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D8F421BCC24EB0065BD89 /* FE7.swift */; settings = {ASSET_TAGS = (); }; };
 		814DF9F81BC8A542002A8AC4 /* GrowthsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BD48941BC789A600ED6169 /* GrowthsDetailViewController.xib */; };
 		814DF9FB1BC98E02002A8AC4 /* BasesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DF9F91BC98E02002A8AC4 /* BasesDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		814DF9FC1BC98E02002A8AC4 /* BasesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814DF9FA1BC98E02002A8AC4 /* BasesDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		811D8F421BCC24EB0065BD89 /* FE7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FE7.swift; sourceTree = "<group>"; };
 		814DF9F91BC98E02002A8AC4 /* BasesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasesDetailViewController.swift; sourceTree = "<group>"; };
 		814DF9FA1BC98E02002A8AC4 /* BasesDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasesDetailViewController.xib; sourceTree = "<group>"; };
 		814DF9FD1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstitutionDetailViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				81B33C5A1BCAE6DD00E24BF7 /* FECharacterData.swift */,
 				81B33C5C1BCAEAFE00E24BF7 /* FEClassCharacterAbility.swift */,
 				81B33C5E1BCAEE4E00E24BF7 /* FE6.swift */,
+				811D8F421BCC24EB0065BD89 /* FE7.swift */,
 			);
 			path = "Universal FE Randomizer";
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				81B33C5D1BCAEAFE00E24BF7 /* FEClassCharacterAbility.swift in Sources */,
 				81B33C481BC9DA7900E24BF7 /* WeaponDetailViewController.swift in Sources */,
 				81B33C551BCAD13800E24BF7 /* BaseGame.swift in Sources */,
+				811D8F431BCC24EB0065BD89 /* FE7.swift in Sources */,
 				81EC4F991BBE3AAD007F00E8 /* MainViewController.swift in Sources */,
 				81B33C521BCABE0400E24BF7 /* ClassesDetailViewController.swift in Sources */,
 				81BD488C1BC39F7900ED6169 /* LabeledValueStepper.swift in Sources */,

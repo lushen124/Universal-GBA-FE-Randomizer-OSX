@@ -21,4 +21,6 @@ protocol BaseGame : class {
     func extendedClassList() -> [FEClass]
     func lordClassList() -> [FEClass]
     func thiefClassList() -> [FEClass]
+    
+    func characterLinksForCharacter(character: FECharacter) -> [FECharacter]
 }
