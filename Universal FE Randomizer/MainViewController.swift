@@ -109,7 +109,7 @@ class MainViewController: NSViewController {
         
         DetailContainer.hidden = true
         
-        RandomizationSettings.sharedInstance.game = FE7()
+        RandomizationSettings.sharedInstance.game = FE8()
     }
     
     @IBAction func onEnabledSwitchToggled(sender: AnyObject) {
