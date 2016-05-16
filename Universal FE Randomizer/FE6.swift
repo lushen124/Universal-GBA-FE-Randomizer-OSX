@@ -13,6 +13,27 @@ class FE6: NSObject {
 }
 
 extension FE6 : BaseGame {
+    func gameTitle() -> String {
+        return "Fire Emblem 6: Binding Blade"
+    }
+    
+    func cleanCRC32() -> UInt32 {
+        // This assumes a clean Japanese version.
+        return 0xd38763e1;
+    }
+    
+    func characterTableOffsetAddress() -> Int {
+        return 0x17680;
+    }
+    
+    func defaultCharacterTableOffset() -> Int {
+        return 0x6076A0;
+    }
+    
+    func defaultCharacterCount() -> Int {
+        return 220;
+    }
+    
     func playableCharacterList() -> [FECharacter] {
         return [ GenericFECharacter(displayName: "Roy", characterID: 0x01),
             GenericFECharacter(displayName: "Clarine", characterID: 0x02),

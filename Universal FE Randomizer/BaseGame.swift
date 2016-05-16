@@ -9,6 +9,13 @@
 import Foundation
 
 protocol BaseGame : class {
+    func gameTitle() -> String
+    func cleanCRC32() -> UInt32
+    
+    func characterTableOffsetAddress() -> Int
+    func defaultCharacterTableOffset() -> Int
+    func defaultCharacterCount() -> Int
+    
     func playableCharacterList() -> [FECharacter]
     func bossCharacterList() -> [FECharacter]
     func eligibleClasses() -> [FEClass]
@@ -23,4 +30,5 @@ protocol BaseGame : class {
     func thiefClassList() -> [FEClass]
     
     func characterLinksForCharacter(character: FECharacter) -> [FECharacter]
+    
 }

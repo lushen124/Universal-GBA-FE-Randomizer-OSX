@@ -22,6 +22,8 @@ class MainViewController: NSViewController {
 
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var DetailContainer: NSBox!
+    @IBOutlet weak var fileTextField: NSTextField!
+    @IBOutlet weak var gameLabel: NSTextField!
     
     @IBOutlet weak var masterEnabledSwitch: NSButton!
     
@@ -31,6 +33,8 @@ class MainViewController: NSViewController {
     var movementDetailViewController : MovementDetailViewController?
     var weaponDetailViewController : WeaponDetailViewController?
     var classesDetailViewController : ClassesDetailViewController?
+    
+    var gameController : GameController?
     
     var growthContentView : NSView {
         get {
@@ -109,7 +113,45 @@ class MainViewController: NSViewController {
         
         DetailContainer.hidden = true
         
-        RandomizationSettings.sharedInstance.game = FE8()
+        self.gameLabel.hidden = true;
+    }
+    
+    @IBAction func onBrowse(sender: AnyObject) {
+        let panel: NSOpenPanel! = NSOpenPanel.init();
+        
+        panel.beginSheetModalForWindow(self.view.window!, completionHandler: { (Int result) -> Void in
+            if (result == NSFileHandlingPanelOKButton) {
+                let theDoc: NSURL! = panel.URLs[0];
+                self.fileTextField.stringValue = theDoc.absoluteString
+               
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.gameController = GameController(fileURL: theDoc);
+                    if(self.gameController!.validate()) {
+                        RandomizationSettings.sharedInstance.game = self.gameController!.baseGame
+                        
+                        self.tableView.reloadData();
+                        
+                        self.gameLabel.hidden = false;
+                        self.gameLabel.stringValue = self.gameController!.baseGame!.gameTitle();
+                    }
+                    else if (self.gameController!.baseGame != nil) {
+                        let alert: NSAlert = NSAlert.init();
+                        alert.messageText = "Incorrect CRC32 Checksum";
+                        alert.informativeText = "This game may have been modified. The data may have been relocated and the randomizer may not work properly.";
+                        alert.alertStyle = NSAlertStyle.WarningAlertStyle;
+                        
+                        alert.beginSheetModalForWindow(self.view.window!, completionHandler: nil);
+                        
+                        RandomizationSettings.sharedInstance.game = self.gameController!.baseGame
+                        
+                        self.tableView.reloadData();
+                        
+                        self.gameLabel.hidden = false;
+                        self.gameLabel.stringValue = self.gameController!.baseGame!.gameTitle() + " (Hacked)";
+                    }
+                });
+            }
+        });
     }
     
     @IBAction func onEnabledSwitchToggled(sender: AnyObject) {
@@ -174,6 +216,10 @@ enum TopLevelRandomizationOptions : Int {
 
 extension MainViewController: NSTableViewDataSource {
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+        if (RandomizationSettings.sharedInstance.game == nil) {
+            return 0;
+        }
+        
         return TopLevelRandomizationOptions.Count.rawValue
     }
     

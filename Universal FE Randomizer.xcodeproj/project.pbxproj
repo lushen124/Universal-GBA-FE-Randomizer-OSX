@@ -16,6 +16,10 @@
 		814DFA001BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814DF9FE1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		814DFA031BC9C1D1002A8AC4 /* MovementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DFA011BC9C1D1002A8AC4 /* MovementDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		814DFA041BC9C1D1002A8AC4 /* MovementDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814DFA021BC9C1D1002A8AC4 /* MovementDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		815B8D201CE8E7F700C918C8 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815B8D1F1CE8E7F700C918C8 /* GameController.swift */; settings = {ASSET_TAGS = (); }; };
+		815B8D241CE9812400C918C8 /* CRC32Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815B8D231CE9812400C918C8 /* CRC32Helper.swift */; settings = {ASSET_TAGS = (); }; };
+		815B8D261CE9862100C918C8 /* UPSPatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815B8D251CE9862100C918C8 /* UPSPatcher.swift */; settings = {ASSET_TAGS = (); }; };
+		815B8D281CE998F300C918C8 /* FE6-TLRedux-v1.0.ups in Resources */ = {isa = PBXBuildFile; fileRef = 815B8D271CE9949800C918C8 /* FE6-TLRedux-v1.0.ups */; settings = {ASSET_TAGS = (); }; };
 		81B33C481BC9DA7900E24BF7 /* WeaponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C461BC9DA7900E24BF7 /* WeaponDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		81B33C491BC9DA7900E24BF7 /* WeaponDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B33C471BC9DA7900E24BF7 /* WeaponDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		81B33C4B1BCA1E6200E24BF7 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B33C4A1BCA1E6200E24BF7 /* ItemManager.swift */; settings = {ASSET_TAGS = (); }; };
@@ -46,6 +50,10 @@
 		814DF9FE1BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConstitutionDetailViewController.xib; sourceTree = "<group>"; };
 		814DFA011BC9C1D1002A8AC4 /* MovementDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementDetailViewController.swift; sourceTree = "<group>"; };
 		814DFA021BC9C1D1002A8AC4 /* MovementDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovementDetailViewController.xib; sourceTree = "<group>"; };
+		815B8D1F1CE8E7F700C918C8 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		815B8D231CE9812400C918C8 /* CRC32Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRC32Helper.swift; sourceTree = "<group>"; };
+		815B8D251CE9862100C918C8 /* UPSPatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPSPatcher.swift; sourceTree = "<group>"; };
+		815B8D271CE9949800C918C8 /* FE6-TLRedux-v1.0.ups */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FE6-TLRedux-v1.0.ups"; sourceTree = "<group>"; };
 		81B33C461BC9DA7900E24BF7 /* WeaponDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponDetailViewController.swift; sourceTree = "<group>"; };
 		81B33C471BC9DA7900E24BF7 /* WeaponDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeaponDetailViewController.xib; sourceTree = "<group>"; };
 		81B33C4A1BCA1E6200E24BF7 /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
@@ -85,6 +93,8 @@
 		81EC4F7A1BBE39C1007F00E8 = {
 			isa = PBXGroup;
 			children = (
+				815B8D271CE9949800C918C8 /* FE6-TLRedux-v1.0.ups */,
+				815B8D231CE9812400C918C8 /* CRC32Helper.swift */,
 				81EC4F851BBE39C1007F00E8 /* Universal FE Randomizer */,
 				81EC4F841BBE39C1007F00E8 /* Products */,
 			);
@@ -131,6 +141,8 @@
 				81B33C5E1BCAEE4E00E24BF7 /* FE6.swift */,
 				811D8F421BCC24EB0065BD89 /* FE7.swift */,
 				811D8F441BCCD0370065BD89 /* FE8.swift */,
+				815B8D1F1CE8E7F700C918C8 /* GameController.swift */,
+				815B8D251CE9862100C918C8 /* UPSPatcher.swift */,
 			);
 			path = "Universal FE Randomizer";
 			sourceTree = "<group>";
@@ -195,6 +207,7 @@
 			files = (
 				814DFA001BC9B3D6002A8AC4 /* ConstitutionDetailViewController.xib in Resources */,
 				814DFA041BC9C1D1002A8AC4 /* MovementDetailViewController.xib in Resources */,
+				815B8D281CE998F300C918C8 /* FE6-TLRedux-v1.0.ups in Resources */,
 				814DF9F81BC8A542002A8AC4 /* GrowthsDetailViewController.xib in Resources */,
 				81B33C491BC9DA7900E24BF7 /* WeaponDetailViewController.xib in Resources */,
 				81B33C531BCABE0400E24BF7 /* ClassesDetailViewController.xib in Resources */,
@@ -213,6 +226,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B33C591BCAD1F000E24BF7 /* FEObject.swift in Sources */,
+				815B8D201CE8E7F700C918C8 /* GameController.swift in Sources */,
+				815B8D261CE9862100C918C8 /* UPSPatcher.swift in Sources */,
 				81B33C5B1BCAE6DD00E24BF7 /* FECharacterData.swift in Sources */,
 				81B33C5F1BCAEE4E00E24BF7 /* FE6.swift in Sources */,
 				81EC4F871BBE39C1007F00E8 /* AppDelegate.swift in Sources */,
@@ -221,6 +236,7 @@
 				81B33C481BC9DA7900E24BF7 /* WeaponDetailViewController.swift in Sources */,
 				811D8F451BCCD0370065BD89 /* FE8.swift in Sources */,
 				81B33C551BCAD13800E24BF7 /* BaseGame.swift in Sources */,
+				815B8D241CE9812400C918C8 /* CRC32Helper.swift in Sources */,
 				811D8F431BCC24EB0065BD89 /* FE7.swift in Sources */,
 				81EC4F991BBE3AAD007F00E8 /* MainViewController.swift in Sources */,
 				81B33C521BCABE0400E24BF7 /* ClassesDetailViewController.swift in Sources */,
@@ -336,6 +352,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Universal FE Randomizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otakureborn.Universal-FE-Randomizer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Universal FE Randomizer/Universal FE Randomizer-Bridging-Header.h";
@@ -351,6 +368,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Universal FE Randomizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otakureborn.Universal-FE-Randomizer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Universal FE Randomizer/Universal FE Randomizer-Bridging-Header.h";

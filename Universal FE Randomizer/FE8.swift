@@ -13,6 +13,27 @@ class FE8: NSObject {
 }
 
 extension FE8 : BaseGame {
+    
+    func gameTitle() -> String {
+        return "Fire Emblem 8: The Sacred Stones"
+    }
+    
+    func cleanCRC32() -> UInt32 {
+        return 0;
+    }
+    
+    func characterTableOffsetAddress() -> Int {
+        return 0;
+    }
+    
+    func defaultCharacterTableOffset() -> Int {
+        return 0;
+    }
+    
+    func defaultCharacterCount() -> Int {
+        return 0;
+    }
+    
     func playableCharacterList() -> [FECharacter] {
         return [ GenericFECharacter(displayName: "Eirika", characterID: 0x01),
             GenericFECharacter(displayName: "Seth", characterID: 0x02),

@@ -13,6 +13,27 @@ class FE7: NSObject {
 }
 
 extension FE7 : BaseGame {
+    
+    func gameTitle() -> String {
+        return "Fire Emblem 7: Blazing Sword";
+    }
+    
+    func cleanCRC32() -> UInt32 {
+        return 0;
+    }
+    
+    func characterTableOffsetAddress() -> Int {
+        return 0;
+    }
+    
+    func defaultCharacterTableOffset() -> Int {
+        return 0;
+    }
+    
+    func defaultCharacterCount() -> Int {
+        return 0;
+    }
+    
     func playableCharacterList() -> [FECharacter] {
         return [ GenericFECharacter(displayName: "Eliwood", characterID: 0x01),
             GenericFECharacter(displayName: "Hector", characterID: 0x02),
