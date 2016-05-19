@@ -22,15 +22,23 @@ extension FE8 : BaseGame {
         return 0;
     }
     
-    func characterTableOffsetAddress() -> Int {
+    func japaneseCRC32() -> UInt32 {
         return 0;
     }
     
-    func defaultCharacterTableOffset() -> Int {
+    func characterTableOffsetAddress() -> UInt32 {
+        return 0;
+    }
+    
+    func defaultCharacterTableOffset() -> UInt32 {
         return 0;
     }
     
     func defaultCharacterCount() -> Int {
+        return 0;
+    }
+    
+    func characterObjectSize() -> Int {
         return 0;
     }
     
@@ -131,6 +139,14 @@ extension FE8 : BaseGame {
             GenericFECharacter(displayName: "Orson", characterID: 0x6D) // Ch. 16
 //            GenericFECharacter(displayName: "Demon King", characterID: 0xBE)
         ]
+    }
+    
+    func isCharacterPlayable(characterObject: FECharacterData) -> Bool {
+        return false;
+    }
+    
+    func isCharacterABoss(characterObject: FECharacterData) -> Bool {
+        return false;
     }
     
     func eligibleClasses() -> [FEClass] {
@@ -459,5 +475,18 @@ extension FE8 : BaseGame {
         }
                 
         return []
+    }
+    
+    // Factory Methods
+    
+    func createCharacterObjectFromData(characterData: NSData) -> FECharacterData? {
+     
+        return nil;
+    }
+    
+    // Serialization Methods
+    
+    func dataForCharacterObject(characterData: FECharacterData) -> NSData? {
+        return nil;
     }
 }

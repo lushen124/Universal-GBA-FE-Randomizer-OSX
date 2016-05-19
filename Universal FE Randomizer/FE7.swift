@@ -22,15 +22,23 @@ extension FE7 : BaseGame {
         return 0;
     }
     
-    func characterTableOffsetAddress() -> Int {
+    func japaneseCRC32() -> UInt32 {
         return 0;
     }
     
-    func defaultCharacterTableOffset() -> Int {
+    func characterTableOffsetAddress() -> UInt32 {
+        return 0;
+    }
+    
+    func defaultCharacterTableOffset() -> UInt32 {
         return 0;
     }
     
     func defaultCharacterCount() -> Int {
+        return 0;
+    }
+    
+    func characterObjectSize() -> Int {
         return 0;
     }
     
@@ -148,6 +156,14 @@ extension FE7 : BaseGame {
             GenericFECharacter(displayName: "Kenneth (Morph)", characterID: 0xF9),
             GenericFECharacter(displayName: "Darin (Morph)", characterID: 0xFA)
         ]
+    }
+    
+    func isCharacterPlayable(characterObject: FECharacterData) -> Bool {
+        return false;
+    }
+    
+    func isCharacterABoss(characterObject: FECharacterData) -> Bool {
+        return false;
     }
     
     func eligibleClasses() -> [FEClass] {
@@ -445,5 +461,15 @@ extension FE7 : BaseGame {
         }
         
         return []
+    }
+    
+    // Factory Methods
+    func createCharacterObjectFromData(characterData: NSData) -> FECharacterData? {
+        return nil;
+    }
+    
+    // Serialization Methods
+    func dataForCharacterObject(characterData: FECharacterData) -> NSData? {
+        return nil;
     }
 }

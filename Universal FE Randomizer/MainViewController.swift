@@ -24,8 +24,12 @@ class MainViewController: NSViewController {
     @IBOutlet weak var DetailContainer: NSBox!
     @IBOutlet weak var fileTextField: NSTextField!
     @IBOutlet weak var gameLabel: NSTextField!
+    @IBOutlet weak var randomizeButton: NSButton!
     
     @IBOutlet weak var masterEnabledSwitch: NSButton!
+    
+    var activeStatusWindow : NSWindow?
+    var statusLabel : NSTextField?
     
     var growthsDetailViewController : GrowthsDetailViewController?
     var basesDetailViewController : BasesDetailViewController?
@@ -117,16 +121,21 @@ class MainViewController: NSViewController {
     }
     
     @IBAction func onBrowse(sender: AnyObject) {
+        
         let panel: NSOpenPanel! = NSOpenPanel.init();
         
         panel.beginSheetModalForWindow(self.view.window!, completionHandler: { (Int result) -> Void in
+            
             if (result == NSFileHandlingPanelOKButton) {
+                self.showStatusWithSpinner("Parsing file...");
+                
                 let theDoc: NSURL! = panel.URLs[0];
                 self.fileTextField.stringValue = theDoc.absoluteString
                
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.gameController = GameController(fileURL: theDoc);
                     if(self.gameController!.validate()) {
+                        
                         RandomizationSettings.sharedInstance.game = self.gameController!.baseGame
                         
                         self.tableView.reloadData();
@@ -135,6 +144,7 @@ class MainViewController: NSViewController {
                         self.gameLabel.stringValue = self.gameController!.baseGame!.gameTitle();
                     }
                     else if (self.gameController!.baseGame != nil) {
+                        
                         let alert: NSAlert = NSAlert.init();
                         alert.messageText = "Incorrect CRC32 Checksum";
                         alert.informativeText = "This game may have been modified. The data may have been relocated and the randomizer may not work properly.";
@@ -149,9 +159,51 @@ class MainViewController: NSViewController {
                         self.gameLabel.hidden = false;
                         self.gameLabel.stringValue = self.gameController!.baseGame!.gameTitle() + " (Hacked)";
                     }
+                    
+                    self.dismissStatusSpinner();
+                    
+                    if (self.gameController != nil && self.gameController!.rawData != nil) {
+                        self.randomizeButton.enabled = true;
+                    }
+                    else {
+                        self.randomizeButton.enabled = false;
+                    }
                 });
             }
         });
+    }
+    
+    @IBAction func onRandomize(sender: AnyObject) {
+        if (self.gameController != nil && self.gameController!.rawData != nil) {
+            self.gameController!.randomizeWithRandomizationSettings(RandomizationSettings.sharedInstance);
+            
+            let savePanel : NSSavePanel = NSSavePanel.init();
+            
+            savePanel.beginSheetModalForWindow(self.view.window!, completionHandler: { (Int result) -> Void in
+                if (result == NSFileHandlingPanelOKButton) {
+                    let theDoc: NSURL! = savePanel.URL;
+                    
+                    let data: NSData = self.gameController!.rawData!;
+                    let success : Bool = data.writeToFile(theDoc.path!, atomically: true);
+                    if (success) {
+                        let alert: NSAlert = NSAlert.init();
+                        alert.messageText = "Success!";
+                        alert.informativeText = "Successfully randomized " + self.gameController!.baseGame!.gameTitle() + "!";
+                        alert.alertStyle = NSAlertStyle.InformationalAlertStyle;
+                        
+                        alert.beginSheetModalForWindow(self.view.window!, completionHandler: nil);
+                    }
+                    else {
+                        let alert: NSAlert = NSAlert.init();
+                        alert.messageText = "Randomization failed!";
+                        alert.informativeText = "There was a problem randomizing the game.";
+                        alert.alertStyle = NSAlertStyle.CriticalAlertStyle;
+                        
+                        alert.beginSheetModalForWindow(self.view.window!, completionHandler: nil);
+                    }
+                }
+            });
+        }
     }
     
     @IBAction func onEnabledSwitchToggled(sender: AnyObject) {
@@ -196,6 +248,49 @@ class MainViewController: NSViewController {
             DetailContainer.hidden = !isEnabled
             self.tableView.reloadDataForRowIndexes(NSIndexSet.init(index: TopLevelRandomizationOptions.Classes.rawValue), columnIndexes: NSIndexSet.init(index: 0))
             self.tableView.noteHeightOfRowsWithIndexesChanged(NSIndexSet.init(index: TopLevelRandomizationOptions.Classes.rawValue))
+        }
+    }
+    
+    private func showStatusWithSpinner(status: String) {
+        if (self.activeStatusWindow == nil) {
+            let aWindow : NSWindow = NSWindow.init(contentRect: NSRect.init(x: 0, y: 0, width: 400, height: 200), styleMask: NSTexturedBackgroundWindowMask, backing: NSBackingStoreType.Buffered, `defer`: false);
+        
+            let spinner : NSProgressIndicator = NSProgressIndicator.init(frame: NSZeroRect);
+            spinner.style = NSProgressIndicatorStyle.SpinningStyle;
+            spinner.controlSize = NSControlSize.RegularControlSize;
+            spinner.sizeToFit();
+            spinner.startAnimation(nil);
+            
+            aWindow.contentView!.addSubview(spinner);
+            spinner.setFrameOrigin(NSPoint.init(x: (400 - spinner.frame.size.width) / 2, y: 200 - spinner.frame.size.height - 20));
+            
+            let statusLabel : NSTextField = NSTextField.init(frame: NSRect.init(x: 10, y: 0, width: 380, height: spinner.frame.origin.y - 10));
+            statusLabel.font = NSFont.systemFontOfSize(17);
+            statusLabel.alignment = NSTextAlignment.Center;
+            statusLabel.bordered = false;
+            statusLabel.bezeled = false;
+            statusLabel.editable = false;
+            statusLabel.drawsBackground = false;
+            statusLabel.stringValue = status;
+            aWindow.contentView!.addSubview(statusLabel);
+            
+            self.view.window!.beginSheet(aWindow, completionHandler: nil);
+            
+            self.activeStatusWindow = aWindow;
+            self.statusLabel = statusLabel;
+        }
+        else {
+            self.statusLabel!.stringValue = status;
+        }
+    }
+    
+    private func dismissStatusSpinner() {
+        if (self.activeStatusWindow != nil) {
+            
+            self.view.window!.endSheet(self.activeStatusWindow!);
+            
+            self.activeStatusWindow = nil;
+            self.statusLabel = nil;
         }
     }
 }

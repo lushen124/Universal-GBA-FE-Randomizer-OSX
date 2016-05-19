@@ -9,6 +9,8 @@
 import Foundation
 
 protocol FECharacterData {
+    var rawData : NSData {get set}
+    
     var characterAffinity : UInt8 {get set}
     var level : UInt8 { get set }
     
@@ -29,14 +31,14 @@ protocol FECharacterData {
     var resGrowth : UInt8 { get set }
     var lckGrowth : UInt8 { get set }
     
-    var swordLevel : WeaponRank { get set }
-    var spearLevel : WeaponRank { get set }
-    var axeLevel : WeaponRank { get set }
-    var bowLevel : WeaponRank { get set }
-    var staffLevel : WeaponRank { get set }
-    var animaLevel : WeaponRank { get set }
-    var lightLevel : WeaponRank { get set }
-    var darkLevel : WeaponRank { get set }
+    var swordLevel : UInt8 { get set }
+    var spearLevel : UInt8 { get set }
+    var axeLevel : UInt8 { get set }
+    var bowLevel : UInt8 { get set }
+    var staffLevel : UInt8 { get set }
+    var animaLevel : UInt8 { get set }
+    var lightLevel : UInt8 { get set }
+    var darkLevel : UInt8 { get set }
     
     var nameIndex : UInt16 { get }
     var bioIndex : UInt16 { get }

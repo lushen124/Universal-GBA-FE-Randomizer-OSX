@@ -11,6 +11,7 @@
                 <outlet property="fileTextField" destination="gY9-DJ-qcv" id="zpf-3h-Z09"/>
                 <outlet property="gameLabel" destination="d2F-uS-qau" id="cH2-PA-rF3"/>
                 <outlet property="masterEnabledSwitch" destination="UaN-TZ-weA" id="fDO-77-evZ"/>
+                <outlet property="randomizeButton" destination="qa4-ZC-92q" id="eG2-Ub-van"/>
                 <outlet property="tableView" destination="1lp-aV-zPg" id="2tB-iu-kel"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="feh-MP-pWE"/>
             </connections>
@@ -120,6 +121,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="onRandomize:" target="-2" id="bfe-Sj-L8C"/>
+                    </connections>
                 </button>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="OF5-tc-grQ">
                     <rect key="frame" x="18" y="46" width="123" height="18"/>
